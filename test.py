@@ -7,7 +7,7 @@ with st.form("Điền vào chỗ cần điền"):
     work = st.text_input("Nghề nghiệp")
     favor = st.text_input("Sở thích")
     gift = st.text_input("Gửi lời cho người làm code")
-    send = st.form_submit_button(Label='Gửi')
+    send = st.form_submit_button("Send")
 if send:
     data = {
         "Name": [name],
