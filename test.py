@@ -16,9 +16,9 @@ if send:
     st.session_state.favor = favor
     st.session_state.sdt = sdt
     st.session_state.gift = gift
+    st.success(f"Cảm ơn {name} rất nhiều.")
     print(f"Thông tin người dùng:")
     print(f"{name},{age},{work},{favor},{sdt},{gift}")
-    st.success(f"Cảm ơn {name} rất nhiều.")
 if st.button('Xem thông tin người dùng'):
     if 'name' in st.session_state and 'age' in st.session_state and 'work' in st.session_state and 'favor' in st.session_state and 'sdt' in st.session_state and 'gift' in st.session_state:
         st.write(f"Họ và tên : {st.session_state.name}") 
