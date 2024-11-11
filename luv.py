@@ -8,11 +8,11 @@ def plot_heart():
     fig, ax = plt.subplots(figsize=(6, 6))
     ax.plot(x, y, color="red", lw=2)
     ax.fill(x, y, color="red", alpha=0.3)
-    ax.text(0, 0, "Anh yêu em nhiều vãi lồn <3", color="black", fontsize=20, ha='center', va='center')
+    ax.text(0, 0, "Anh yêu em nhiều vãi lồn <3", color="black", fontsize=18, ha='center', va='center')
     ax.set_aspect('equal')
     ax.axis('off')  
     return fig
-st.title("Gửi Chau Anh")
+st.title("Gửi em!")
 st.write("xin lỗi anh nhát nhưng mà anh biết code")
 fig = plot_heart()
 st.pyplot(fig)
