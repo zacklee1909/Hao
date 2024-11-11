@@ -7,7 +7,7 @@ with st.form("Điền vào chỗ cần điền"):
     work = st.text_input("Nghề nghiệp")
     favor = st.text_input("Sở thích")
     gift = st.text_input("Gửi lời cho người làm code")
-    send = st.form_submit_button("Gửi")
+    send = st.form_submit_button(Label='Gửi')
 if send:
     data = {
         "Name": [name],
@@ -17,6 +17,7 @@ if send:
         "Gift": [gift]
     }
     df = pd.DataFrame(data)
-    print("{name},{age},{work},{favor},{gift}")
+    print(f"Thông tin người dùng:")
+    print(f"{name},{age},{work},{favor},{gift}")
     df.to_csv("form_data.csv",mode='a',header=False,index=False)
     st.success(f"Cảm ơn {name} rất nhiều.")
