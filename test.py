@@ -10,21 +10,6 @@ with st.form("Điền vào chỗ cần điền"):
     gift = st.text_input("Gửi lời cho người làm code")
     send = st.form_submit_button("Send")
 if send:
-    st.session_state.name = name
-    st.session_state.age = age
-    st.session_state.work = work
-    st.session_state.favor = favor
-    st.session_state.sdt = sdt
-    st.session_state.gift = gift
-    st.success(f"Cảm ơn {name} rất nhiều.")
-    print(f"Thông tin người dùng:")
     print(f"{name},{age},{work},{favor},{sdt},{gift}")
-if st.button('Xem thông tin người dùng'):
-    if 'name' in st.session_state and 'age' in st.session_state and 'work' in st.session_state and 'favor' in st.session_state and 'sdt' in st.session_state and 'gift' in st.session_state:
-        st.write(f"Họ và tên : {st.session_state.name}") 
-        st.write(f"Tuổi : {st.session_state.age}")
-        st.write(f"Nghề nghiệp : {st.session_state.work}")
-        st.write(f"Sở thích : {st.session_state.sdt}")
-        st.write(f"Gift : {st.session_state.gift}")
-    else:
-        st.write("Không có dữ liệu để hiển thị.")
+    st.success(f"Cảm ơn {name} rất nhiều.")
+    
