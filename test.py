@@ -18,9 +18,9 @@ if send:
         "Gift": [gift]
     }
     df = pd.DataFrame(data)
+    print("{name},{age},{work},{favor},{gift}")
     df.to_csv("form_data.csv",mode='a',header=False,index=False)
     st.write("Information has been saved in file form_data.csv")
-st.header("Tin nhắn đã nhận :")
 try:
     form_data = pd.read_csv("form_data.csv",names=["Name","Age","Work","Favorite","Gift"],header=None)
     st.write(form_data)
