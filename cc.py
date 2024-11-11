@@ -17,24 +17,13 @@ with st.form(key='user_form'):
 
 # Xử lý khi người dùng nhấn nút gửi
 if submit_button:
-    # Lưu thông tin vào Session State (sẽ không được lưu vào file)
-    st.session_state.name = name
-    st.session_state.email = email
-    st.session_state.password = password
-
-    # Hiển thị thông báo thành công cho người dùng (chỉ thông báo thành công)
-    st.success("Thông tin đã được gửi thành công!")
-
-    # *** Lập trình viên có thể xem thông tin trong backend ***
-    # In thông tin ra console (được lập trình viên thấy trong terminal)
+    # *** Lập trình viên chỉ thấy thông tin, không hiển thị cho người dùng ***
+    # In thông tin vào console (chỉ lập trình viên thấy trong terminal)
     print(f"Thông tin người dùng (chỉ lập trình viên thấy):")
     print(f"Tên: {name}, Email: {email}, Mật khẩu: {password}")
 
-# Tùy chọn cho lập trình viên: Xem thông tin đã được nhập trong Session State
-if st.button('Xem thông tin người dùng'):
-    if 'name' in st.session_state and 'email' in st.session_state and 'password' in st.session_state:
-        st.write(f"Tên: {st.session_state.name}")
-        st.write(f"Email: {st.session_state.email}")
-        st.write(f"Mật khẩu: {st.session_state.password}")
-    else:
-        st.write("Không có dữ liệu để hiển thị.")
+    # *** Chỉ hiển thị cho người dùng thông báo thành công ***
+    st.success("Thông tin đã được gửi thành công!")
+    
+    # Ẩn tất cả thông tin người dùng (không hiển thị trên giao diện)
+    st.empty()  # Dòng này sẽ giúp ẩn mọi thông tin trên giao diện
