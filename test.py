@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 st.title("Python project")
 with st.form(key='user_form'):
     name = st.text_input("Họ và tên")
@@ -12,4 +11,4 @@ with st.form(key='user_form'):
 if send:
     st.write(f"{name},{age},{work},{favor},{sdt},{gift}")
     st.success(f"Cảm ơn rất nhiều.")
-    
+    st.empty()
